@@ -115,7 +115,7 @@ default = ["dev"]
 publish = ["pypi-release", "conda-release"]
 linter = ["linter"]
 sphinx = ["sphinx"]
-tests = ["tests"]
+tests = ["tests", "dev"]
 
 [tool.pytest.ini_options]
 markers = ["long: marks tests as long (deselect with '-m \"not long\"')"]
