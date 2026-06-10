@@ -12,3 +12,7 @@ python:
 
 conda:
    environment: doc/environment.yaml
+
+sphinx:
+  # Path to your Sphinx configuration file.
+  configuration: doc/conf.py
