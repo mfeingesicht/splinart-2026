@@ -11,4 +11,4 @@ python:
         path: .
 
 conda:
-   environment: doc/environment.yml
+   environment: doc/environment.yaml
