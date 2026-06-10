@@ -27,29 +27,29 @@ jobs:
       - name: check pylint
         run: pixi run -e linter pylint splinart
 
-    pytest:
-      needs: [precommit, linter]
-      runs-on: ${{ matrix.os }}
-      strategy:
-        matrix:
-          os:
-            - ubuntu-latest
-            - macos-latest
-            - windows-latest
+  pytest:
+    needs: [precommit, linter]
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os:
+          - ubuntu-latest
+          - macos-latest
+          - windows-latest
 
-      steps:
-        - uses: actions/checkout@v3
+    steps:
+      - uses: actions/checkout@v3
 
-        - uses: prefix-dev/setup-pixi@v0.9.6
-          with:
-            cache: true
+      - uses: prefix-dev/setup-pixi@v0.9.6
+        with:
+          cache: true
 
-        - name: Install fortran compiler
-          if: runner.os == 'macOS'
-          run: pixi add fortran-compiler
+      - name: Install fortran compiler
+        if: runner.os == 'macOS'
+        run: pixi add fortran-compiler
 
-        - name: Run tests
-          run: pixi run pytest
+      - name: Run tests
+        run: pixi run pytest
 
   build:
     needs: [precommit, linter]
