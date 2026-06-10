@@ -9,4 +9,4 @@ dependencies:
   - numpydoc
   - nbsphinx-link
   - myst-parser
-  -
+  - docutils < 0.21
