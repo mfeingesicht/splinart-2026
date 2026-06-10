@@ -1,11 +1,12 @@
-{% set version = "0.1.0" %}
+{% set version = "0.2.0" %}
 
 package:
-  name: splinart
+  name: splinart_2026_mf
   version: {{ version }}
 
 source:
-  - url: file://{{ RECIPE_DIR }}/../dist/splinart-{{ version }}.tar.gz
+  git_url: https://github.com/mfeingesicht/splinart-2026.git
+  git_rev: v{{ version }}
 
 build:
   number: 0
@@ -14,10 +15,10 @@ build:
 
 requirements:
   build:
-    - python
+    - python>=3.8
     - setuptools
   run:
-    - python
+    - python>=3.8
     - numpy
     - matplotlib
 
@@ -26,11 +27,11 @@ test:
     - splinart
 
 about:
-  home: http://github.com/gouarin/splinart
+  home: https://github.com/mfeingesicht/splinart-2026
   license: BSD
   license_family: BSD
   summary: "spline art generator"
   description: "spline art generator"
 
 extra:
-  recipe-maintainers: "loic.gouarin@gmail.com"
+  recipe-maintainers: "maxime.feingesicht@lisa.ipsl.fr"
